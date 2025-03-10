@@ -12,7 +12,7 @@ import Combine
 class OpenAIService {
     let baseURL = "https://api.openai.com/v1/"
     let model = "gpt-4o-mini"
-    let temp: Float? = 0.25
+    let temp: Float? = 1
     
 //    init() {
 //        let modelsURL = "https://api.openai.com/v1/models"

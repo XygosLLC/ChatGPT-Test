@@ -43,7 +43,7 @@ struct ContentView: View {
     @State private var cancellables: Set<AnyCancellable> = .init()
     
     var body: some View {
-        VStack {
+        VStack {            
             ScrollView {
                 LazyVStack {
                     ForEach(messages, id: \.id) { chatMessage in
@@ -76,7 +76,6 @@ struct ContentView: View {
             } //HStack
             .padding(.horizontal)
             .padding(.bottom, 8)
-            .border(.red)
         } //Outer VStack
         
     } //body

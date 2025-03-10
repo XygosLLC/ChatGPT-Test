@@ -8,19 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		DB234F802D726E9A00E655DE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DB234F7F2D726E9A00E655DE /* Alamofire */; };
+		DBE574AA2D7F9BE6001E7832 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBE5749E2D7F9BE6001E7832 /* Preview Assets.xcassets */; };
+		DBE574AB2D7F9BE6001E7832 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBE574A02D7F9BE6001E7832 /* Assets.xcassets */; };
+		DBE574AD2D7F9BE6001E7832 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE574A12D7F9BE6001E7832 /* CameraView.swift */; };
+		DBE574AE2D7F9BE6001E7832 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE574A22D7F9BE6001E7832 /* CameraViewModel.swift */; };
+		DBE574AF2D7F9BE6001E7832 /* ChatGPT_TestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE574A42D7F9BE6001E7832 /* ChatGPT_TestApp.swift */; };
+		DBE574B02D7F9BE6001E7832 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE574A52D7F9BE6001E7832 /* Constants.swift */; };
+		DBE574B12D7F9BE6001E7832 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE574A62D7F9BE6001E7832 /* ContentView.swift */; };
+		DBE574B22D7F9BE6001E7832 /* OpenAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE574A82D7F9BE6001E7832 /* OpenAIService.swift */; };
+		DBE574B42D7F9C09001E7832 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE574B32D7F9C09001E7832 /* Orientation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DB43CC832D72592A00B9917F /* ChatGPT-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChatGPT-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBE5749E2D7F9BE6001E7832 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DBE574A02D7F9BE6001E7832 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DBE574A12D7F9BE6001E7832 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		DBE574A22D7F9BE6001E7832 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
+		DBE574A32D7F9BE6001E7832 /* ChatGPT_Test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChatGPT_Test.entitlements; sourceTree = "<group>"; };
+		DBE574A42D7F9BE6001E7832 /* ChatGPT_TestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPT_TestApp.swift; sourceTree = "<group>"; };
+		DBE574A52D7F9BE6001E7832 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DBE574A62D7F9BE6001E7832 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DBE574A72D7F9BE6001E7832 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBE574A82D7F9BE6001E7832 /* OpenAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIService.swift; sourceTree = "<group>"; };
+		DBE574B32D7F9C09001E7832 /* Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		DB43CC852D72592A00B9917F /* ChatGPT-Test */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "ChatGPT-Test";
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		DB43CC802D72592A00B9917F /* Frameworks */ = {
@@ -37,7 +49,7 @@
 		DB43CC7A2D72592A00B9917F = {
 			isa = PBXGroup;
 			children = (
-				DB43CC852D72592A00B9917F /* ChatGPT-Test */,
+				DBE574A92D7F9BE6001E7832 /* ChatGPT-Test */,
 				DB43CC842D72592A00B9917F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,6 +60,40 @@
 				DB43CC832D72592A00B9917F /* ChatGPT-Test.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		DBE5749D2D7F9BE6001E7832 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				DBE574B32D7F9C09001E7832 /* Orientation.swift */,
+				DBE574A22D7F9BE6001E7832 /* CameraViewModel.swift */,
+				DBE574A12D7F9BE6001E7832 /* CameraView.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		DBE5749F2D7F9BE6001E7832 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				DBE5749E2D7F9BE6001E7832 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DBE574A92D7F9BE6001E7832 /* ChatGPT-Test */ = {
+			isa = PBXGroup;
+			children = (
+				DBE5749F2D7F9BE6001E7832 /* Preview Content */,
+				DBE574A02D7F9BE6001E7832 /* Assets.xcassets */,
+				DBE5749D2D7F9BE6001E7832 /* Camera */,
+				DBE574A32D7F9BE6001E7832 /* ChatGPT_Test.entitlements */,
+				DBE574A42D7F9BE6001E7832 /* ChatGPT_TestApp.swift */,
+				DBE574A52D7F9BE6001E7832 /* Constants.swift */,
+				DBE574A62D7F9BE6001E7832 /* ContentView.swift */,
+				DBE574A72D7F9BE6001E7832 /* Info.plist */,
+				DBE574A82D7F9BE6001E7832 /* OpenAIService.swift */,
+			);
+			path = "ChatGPT-Test";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -64,9 +110,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				DB43CC852D72592A00B9917F /* ChatGPT-Test */,
 			);
 			name = "ChatGPT-Test";
 			packageProductDependencies = (
@@ -118,6 +161,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBE574AA2D7F9BE6001E7832 /* Preview Assets.xcassets in Resources */,
+				DBE574AB2D7F9BE6001E7832 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +173,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBE574AD2D7F9BE6001E7832 /* CameraView.swift in Sources */,
+				DBE574AE2D7F9BE6001E7832 /* CameraViewModel.swift in Sources */,
+				DBE574AF2D7F9BE6001E7832 /* ChatGPT_TestApp.swift in Sources */,
+				DBE574B42D7F9C09001E7832 /* Orientation.swift in Sources */,
+				DBE574B02D7F9BE6001E7832 /* Constants.swift in Sources */,
+				DBE574B12D7F9BE6001E7832 /* ContentView.swift in Sources */,
+				DBE574B22D7F9BE6001E7832 /* OpenAIService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +313,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ChatGPT-Test/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -300,6 +354,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ChatGPT-Test/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

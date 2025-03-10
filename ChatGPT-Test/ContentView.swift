@@ -42,6 +42,8 @@ struct ContentView: View {
     let service = OpenAIService()
     @State private var cancellables: Set<AnyCancellable> = .init()
     
+    @State private var cameraIsPresented: Bool = false
+    
     var body: some View {
         VStack {            
             ScrollView {
@@ -66,9 +68,18 @@ struct ContentView: View {
                     }
                 
                 Button {
+                    cameraIsPresented = true
+                } label: {
+                    Image(systemName: "camera.fill") .resizable().scaledToFit() .frame(width: 20, height: 20)
+                        .foregroundStyle(.white)
+                        .padding(8)
+                        .background(Circle().fill(.blue))
+                }
+                
+                Button {
                     sendMessage()
                 } label: {
-                    Image(systemName: "arrow.up") .resizable().scaledToFit() .frame(width: 15)
+                    Image(systemName: "arrow.up") .resizable().scaledToFit() .frame(width: 20, height: 20)
                         .foregroundStyle(.white)
                         .padding(8)
                         .background(Circle().fill(.blue))
@@ -77,6 +88,9 @@ struct ContentView: View {
             .padding(.horizontal)
             .padding(.bottom, 8)
         } //Outer VStack
+        .sheet(isPresented: $cameraIsPresented) {
+            CameraView()
+        }
         
     } //body
     

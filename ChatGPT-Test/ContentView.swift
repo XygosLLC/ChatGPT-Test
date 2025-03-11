@@ -89,7 +89,7 @@ struct ContentView: View {
             .padding(.bottom, 8)
         } //Outer VStack
         .sheet(isPresented: $cameraIsPresented) {
-            CameraView()
+            CameraView(service: service, cancellables: $cancellables, messages: $messages)
         }
         
     } //body

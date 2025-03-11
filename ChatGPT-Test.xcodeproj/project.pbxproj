@@ -88,10 +88,10 @@
 				DBE5749D2D7F9BE6001E7832 /* Camera */,
 				DBE574A32D7F9BE6001E7832 /* ChatGPT_Test.entitlements */,
 				DBE574A42D7F9BE6001E7832 /* ChatGPT_TestApp.swift */,
-				DBE574A52D7F9BE6001E7832 /* Constants.swift */,
 				DBE574A62D7F9BE6001E7832 /* ContentView.swift */,
-				DBE574A72D7F9BE6001E7832 /* Info.plist */,
 				DBE574A82D7F9BE6001E7832 /* OpenAIService.swift */,
+				DBE574A52D7F9BE6001E7832 /* Constants.swift */,
+				DBE574A72D7F9BE6001E7832 /* Info.plist */,
 			);
 			path = "ChatGPT-Test";
 			sourceTree = "<group>";

@@ -6,8 +6,15 @@
 //
 
 import SwiftUI
+import Combine
 
 struct CameraView: View {
+    @Environment(\.dismiss) var dismiss
+    
+    let service: OpenAIService
+    @Binding var cancellables: Set<AnyCancellable>
+    @Binding var messages: [ChatMessage]
+    
     @State private var vm = CameraViewModel()
     
     @State private var isHolding: Bool = false
@@ -24,6 +31,14 @@ struct CameraView: View {
                     Spacer()
                     
                     button
+                        .onChange(of: vm.hasPhoto) {
+                            Task(priority: .background) {
+                                if let imageData = vm.photoData {
+                                    sendImage(imageData: imageData)
+                                } //if let imageData
+                            }
+                        } //onChange
+                    
                 } //VStack
                 
             } //ZStack
@@ -58,11 +73,39 @@ struct CameraView: View {
                 withAnimation(.easeOut(duration: 0.15)) {
                     UIImpactFeedbackGenerator(style: .soft).impactOccurred()
                     isHolding = false
+                    
+                    if case .notStarted = vm.photoCaptureState {
+                        vm.takePhoto()
+                        
+                    } else {
+                        vm.retakePhoto()
+                    }
                 } //withAnimation
             } //onEnded
     } //pressGesture
+    
+    
+    func sendImage(imageData: Data) {
+//        print("CameraView found imageData: \(imageData)")
+        let text = "Please explain what is going on in this image"
+        
+        messages.append(ChatMessage(id: UUID().uuidString, message: text, dateCreated: .now, sender: .user))
+        
+        service.sendImage(text: text, imageData: imageData).sink { completion in
+            //Handle error
+            print("CameraView sendImage error: \(completion)")
+        } receiveValue: { response in
+            let message = response.choices[0].message
+            messages.append(ChatMessage(id: UUID().uuidString, message: message.content, dateCreated: .now, sender: .gpt))
+            print("CameraView recieved response from GPT \(message)")
+        } //sendMessage
+        .store(in: &cancellables)
+        
+    } //sendImage
+    
+    
 }
 
 #Preview {
-    CameraView()
+    CameraView(service: OpenAIService(), cancellables: .constant([]), messages: .constant([]))
 }

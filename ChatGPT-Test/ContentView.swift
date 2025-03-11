@@ -53,7 +53,7 @@ struct ContentView: View {
                     } //ForEach sampleMessage
                 } //LazyVStack
                 .padding(.top, 50)
-                .padding()
+                .padding(.horizontal)
             } //ScrollView
             .defaultScrollAnchor(.bottom)
             .ignoresSafeArea(edges: [.top])
@@ -102,7 +102,7 @@ struct ContentView: View {
                 Spacer()
             }
             
-            VStack(alignment: chatMessage.sender == .user ? .trailing : .leading, spacing: 8) {
+            VStack(alignment: chatMessage.sender == .user ? .trailing : .leading, spacing: 5) {
                 switch chatMessage.sender {
                 case .user:
                     Text("You") .font(.subheadline) .bold()
@@ -128,6 +128,7 @@ struct ContentView: View {
                 Spacer()
             }
         } //HStack
+        .padding(.bottom, 10)
     } //messageView
     
     func sendMessage() {

@@ -32,11 +32,13 @@ struct CameraView: View {
                     
                     button
                         .onChange(of: vm.hasPhoto) {
+                            withAnimation { dismiss() }
+                            
                             Task(priority: .background) {
                                 if let imageData = vm.photoData {
                                     sendImage(imageData: imageData)
                                 } //if let imageData
-                            }
+                            } //BackgroundTask
                         } //onChange
                     
                 } //VStack
@@ -95,9 +97,11 @@ struct CameraView: View {
             //Handle error
             print("CameraView sendImage error: \(completion)")
         } receiveValue: { response in
-            let message = response.choices[0].message
-            messages.append(ChatMessage(id: UUID().uuidString, message: message.content, dateCreated: .now, sender: .gpt))
-            print("CameraView recieved response from GPT \(message)")
+            withAnimation {
+                let message = response.choices[0].message
+                messages.append(ChatMessage(id: UUID().uuidString, message: message.content, dateCreated: .now, sender: .gpt))
+//                print("CameraView recieved response from GPT \(message)")
+            } //withAnimation
         } //sendMessage
         .store(in: &cancellables)
         

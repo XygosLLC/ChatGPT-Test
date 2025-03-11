@@ -55,7 +55,7 @@ struct ContentView: View {
                 .padding(.top, 50)
                 .padding()
             } //ScrollView
-            
+            .defaultScrollAnchor(.bottom)
             .ignoresSafeArea(edges: [.top])
             
             HStack {
@@ -63,9 +63,10 @@ struct ContentView: View {
                     .padding(.leading, 5)
                     .padding(5)
                     .background {
+                        RoundedRectangle(cornerRadius: 15) .fill(Color(UIColor.systemBackground))
                         RoundedRectangle(cornerRadius: 15) .stroke(lineWidth: 2)
                             .foregroundStyle(Color.gray.opacity(0.2))
-                    }
+                    } //background
                 
                 Button {
                     cameraIsPresented = true
@@ -87,6 +88,7 @@ struct ContentView: View {
             } //HStack
             .padding(.horizontal)
             .padding(.bottom, 8)
+            
         } //Outer VStack
         .sheet(isPresented: $cameraIsPresented) {
             CameraView(service: service, cancellables: $cancellables, messages: $messages)
@@ -100,7 +102,7 @@ struct ContentView: View {
                 Spacer()
             }
             
-            VStack(alignment: chatMessage.sender == .user ? .trailing : .leading, spacing: 5) {
+            VStack(alignment: chatMessage.sender == .user ? .trailing : .leading, spacing: 8) {
                 switch chatMessage.sender {
                 case .user:
                     Text("You") .font(.subheadline) .bold()

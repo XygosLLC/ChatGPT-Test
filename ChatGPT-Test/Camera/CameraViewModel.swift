@@ -127,7 +127,8 @@ extension CameraViewModel: AVCapturePhotoCaptureDelegate {
             self.session.stopRunning()
             await MainActor.run {
                 let image = UIImage(cgImage: cgImage, scale: 1, orientation: .up)
-                let imageData = image.pngData()
+                let imageData = image.jpegData(compressionQuality: 0)
+                print("CameraViewModel compressed the hell out of an image: \(imageData)")
                 
                 withAnimation {
                     if let imageData {
